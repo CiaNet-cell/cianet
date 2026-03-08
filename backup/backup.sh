@@ -137,7 +137,7 @@ Save_And_Exit () {
     git commit -m backup &> /dev/null
     git branch -M main &> /dev/null
     git remote add origin https://raw.githubusercontent.com/CiaNet-cell/backup
-    git push -f https://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@github.com/CiaNet-cell/backup.git &> /dev/null
+    git push -f https://github.com/CiaNet-cell/cianet/tree/f53f171f2c42bfc272c50829de9db075503cabbd/backup &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
