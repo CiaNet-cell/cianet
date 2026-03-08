@@ -10,7 +10,7 @@ COLBG1="$(cat /etc/hokagevpn/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's
 ###########- END COLOR CODE -##########
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/hokagelegend9999/ijin/main/original > /root/tmp
+    curl -sS https://raw.githubusercontent.com/CiaNet-cell/ijin/main/ijin > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -28,7 +28,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/hokagelegend9999/ijin/main/original | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/CiaNet-cell/ijin/main/ijin | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -45,7 +45,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/hokagelegend9999/ijin/main/original | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/CiaNet-cell/ijin/main/ijin | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -73,7 +73,7 @@ IP=$(curl -sS ipv4.icanhazip.com);
 date=$(date +"%Y-%m-%d")
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-NameUser=$(curl -sS https://raw.githubusercontent.com/hokagelegend9999/ijin/main/original | grep $MYIP | awk '{print $2}')
+NameUser=$(curl -sS https://raw.githubusercontent.com/CiaNet-cell/ijin/main/ijin | grep $MYIP | awk '{print $2}')
 
 
 clear
@@ -109,7 +109,7 @@ zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 ##############++++++++++++++++++++++++#############
 LLatest=`date`
 Get_Data () {
-git clone https://raw.githubusercontent.com/hokagelegend9999/backup.git /root/user-backup/ &> /dev/null
+git clone https://raw.githubusercontent.com/CiaNet-cell/backup.git /root/user-backup/ &> /dev/null
 }
 
 Mkdir_Data () {
@@ -129,15 +129,15 @@ mv /root/$NameUser.zip /root/user-backup/$NameUser/
 Save_And_Exit () {
     DATE=$(date +'%d %B %Y')
     cd /root/user-backup
-    git config --global user.email "dedenseratus@gmail.com" &> /dev/null
-    git config --global user.name "hokagelegend2023" &> /dev/null
+    git config --global user.email "felicia1110cia@gmail.com" &> /dev/null
+    git config --global user.name "CiaNet-cell" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m backup &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://raw.githubusercontent.com/hokagelegend9999/backup
-    git push -f https://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@github.com/hokagelegend9999/backup.git &> /dev/null
+    git remote add origin https://raw.githubusercontent.com/CiaNet-cell/backup
+    git push -f https://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@github.com/CiaNet-cell/backup.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
@@ -152,7 +152,7 @@ sleep 1
 echo -e "$COLOR1│${NC}  [INFO] Processing updating server...... "
 Save_And_Exit
 fi
-link="https://raw.githubusercontent.com/hokagelegend9999/backup/main/$NameUser/$NameUser.zip"
+link="https://raw.githubusercontent.com/CiaNet-cell/backup/main/$NameUser/$NameUser.zip"
 sleep 1
 echo -e "$COLOR1│${NC}  [INFO] Backup done "
 sleep 1
@@ -175,7 +175,7 @@ rm -rf /root/user-backup &> /dev/null
 rm -f /root/$NameUser.zip &> /dev/null
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • HOKAGE LEGEND•                $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • CIANET VPN•                $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo
 read -n 1 -s -r -p "   Press any key to back on menu"
